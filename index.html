@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNS Generator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@4.1.4/css/flag-icons.min.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <div class="toolbar">
+      <div class="window-controls">
+        <span class="control close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <h1>DNS Generator</h1>
+      <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+    </div>
+    
+    <div class="content">
+      <div class="sidebar">
+        <div class="location-selector">
+          <div class="location-header">
+            <h3>Locations</h3>
+            <button id="random-location-btn" class="random-btn" title="Select Random Location">
+              <i class="fas fa-random"></i>
+            </button>
+          </div>
+          <ul id="location-list">
+            <!-- Locations will be populated by JavaScript -->
+          </ul>
+        </div>
+      </div>
+      
+      <div class="main-panel">
+        <div class="section info-section">
+          <div class="info-card">
+            <h2>Selected Location: <span id="current-location">None</span></h2>
+            <p>CIDR Range: <span id="current-cidr">-</span></p>
+            <p>Available IPs: <span id="available-ips">-</span></p>
+          </div>
+        </div>
+        
+        <div class="section dns-section">
+          <div class="button-group">
+            <button id="generate-ipv4-btn" class="btn primary">Generate IPv4 <i class="fas fa-network-wired"></i></button>
+            <button id="generate-ipv6-btn" class="btn secondary">Generate IPv6 <i class="fas fa-sitemap"></i></button>
+          </div>
+          
+          <div id="results" class="results">
+            <h3>Generated DNS Addresses</h3>
+            <div id="dns-list" class="dns-list">
+              <!-- DNS addresses will appear here -->
+              <div class="empty-state">
+                <i class="fas fa-server"></i>
+                <p>Select a location and generate DNS addresses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
